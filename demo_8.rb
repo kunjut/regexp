@@ -16,3 +16,14 @@ s = "one, two, three"
 p s.split                           # => ["one,", "two,", "three"]: по-умолчанию пробел разделитель
 p s.split(", ")              # => ["one", "two", "three"]
 p s.split(/\s*,\s*/)         # => ["one", "two", "three"]
+
+# метод index
+#       012345678910
+text = "hello world"
+pattern = /l/
+p first = text.index(pattern)       # => 2: первое соответствие со 2-го символа
+p n = Regexp.last_match.end(0)      # => 3: конечная позиция соответствия
+p repeat = text.index(pattern, n)
+
+p back = text.rindex(pattern)       # => 9: первое соответствие, с конца
+p Regexp.last_match.end(0)          # => 10: конечная позиция соответствия
