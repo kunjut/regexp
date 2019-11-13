@@ -10,3 +10,9 @@ p "ruby123"[/([a-z]+)(\d+)/,2]      # => "123"
 str = "ruby321"
 p str.slice(/\d+/)                  # => "321", но str не изменен
 p str.slice!(/\d+/)                 # => "ruby", и оно удалено из str
+
+# метод split
+s = "one, two, three"
+p s.split                           # => ["one,", "two,", "three"]: по-умолчанию пробел разделитель
+p s.split(", ")              # => ["one", "two", "three"]
+p s.split(/\s*,\s*/)         # => ["one", "two", "three"]
