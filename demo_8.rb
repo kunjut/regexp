@@ -5,3 +5,8 @@ p "ruby123"[/\d+/]                  # => "123"
 # соответствуюший элемент объекта MatchData
 p "ruby123"[/([a-z]+)(\d+)/,1]      # => "ruby"
 p "ruby123"[/([a-z]+)(\d+)/,2]      # => "123"
+
+# методы slice и slice!
+str = "ruby321"
+p str.slice(/\d+/)                  # => "321", но str не изменен
+p str.slice!(/\d+/)                 # => "ruby", и оно удалено из str
